@@ -23,7 +23,7 @@ function mostrarStatus() {
 function iniciarJogo() {
   console.clear()
   console.log("=== Ashes of the Fallen ===")
-  console.log("Em um mundo devastado por guerras e conflitos, onde as cinzas do passado obscurecem o horizonte, um guerreiro errante cuja terra natal foi destruída, Kasra, que uma vez foi um renomado campeão de sua terra natal, agora é um refugiado, buscando não apenas um novo lar, mas também uma maneira de curar as cicatrizes que carrega e alcançar seu destino final: as lendárias Olimpíadas de 2024.")
+  console.log("Em um mundo devastado por guerras e conflitos, onde as cinzas do passado obscurecem o horizonte, Kasra, um guerreiro errante cuja terra natal, Ãri, foi destruída, que uma vez foi um renomado campeão de sua terra natal, agora é um refugiado, buscando não apenas um novo lar, mas também uma maneira de curar as cicatrizes que carrega e alcançar seu destino final: as lendárias Olimpíadas de 2024.")
   console.log("\nVocê, Kasra, acorda em uma terra desolada...")     
   menu()
 }
