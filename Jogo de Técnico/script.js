@@ -23,7 +23,7 @@ function mostrarStatus() {
 function iniciarJogo() {
   console.clear()
   console.log("=== Ashes of the Fallen ===")
-  console.log("Em um mundo devastado por guerras e conflitos, onde as cinzas do passado obscurecem o horizonte, Kasra, um guerreiro errante cuja terra natal, Ãri, foi destruída, que uma vez foi um renomado campeão de sua terra natal, agora é um refugiado, buscando não apenas um novo lar, mas também uma maneira de curar as cicatrizes que carrega e alcançar seu destino final: as lendárias Olimpíadas de 2024.")
+  console.log("Em um mundo devastado por guerras e conflitos, onde as cinzas do passado obscurecem o horizonte, um guerreiro errante cuja terra natal foi destruída, Kasra, que uma vez foi um renomado campeão de sua terra natal, agora é um refugiado, buscando não apenas um novo lar, mas também uma maneira de curar as cicatrizes que carrega e alcançar seu destino final: as lendárias Olimpíadas de 2024.")
   console.log("\nVocê, Kasra, acorda em uma terra desolada...")     
   menu()
 }
@@ -140,23 +140,6 @@ function menu3() {
   }
 }
 
-function salvarCheckpoint() {
-  checkpointVida = vida
-  checkpointEmpatia = empatia
-  checkpointCoragem = coragem
-  checkpointResiliencia = resiliencia
-  console.log("Checkpoint salvo.")
-}
-
-function restaurarCheckpoint() {
-  vida = checkpointVida
-  empatia = checkpointEmpatia
-  coragem = checkpointCoragem
-  resiliencia = checkpointResiliencia
-  console.log("Progresso restaurado.")
-  voltarDe()
-}
-
 function primeiraEscolha() {
   console.log("\nVocê segue seu caminho, após uma longa caminhada, você se depara com um caminho bifurcado...")
   console.log("1. Entrar na floresta")
@@ -200,7 +183,7 @@ function enfrentarMonstroIncerteza(){
         console.log("\nVocê enfrenta a incerteza de frente e a névoa começa a se dissipar.")
         console.log("Sua coragem te guia pelo caminho certo.")
         coragem += 2
-        salvarCheckpoint()
+
         continuarJornada()
       }
     else if (escolha == "2") {
@@ -208,7 +191,7 @@ function enfrentarMonstroIncerteza(){
         console.log("\nVocê foca sua mente e busca clareza interior.")
         console.log("A Névoa da Confusão se dispersa, e você pode ver o caminho novamente.");
         resiliencia += 2
-        salvarCheckpoint()
+
         continuarJornada()
       }
     else if (escolha == "3") {
@@ -222,7 +205,7 @@ function enfrentarMonstroIncerteza(){
       resiliencia -= 1
       }
       vida -= 15
-      salvarCheckpoint()
+
       continuarJornada()
     } else {
       console.log("Escolha inválida. Tente novamente.")
@@ -264,7 +247,6 @@ function enfrentarMonstroDesmotivacao() {
     console.log("O monstro se dissolve em sombras, derrotado pela sua determinação.")
     coragem += 1
     console.log("Sua coragem aumentou! Coragem atual: " + coragem)
-    salvarCheckpoint()
     continuarJornada()
   } else if (escolha == "2") {
     console.clear()
@@ -272,7 +254,6 @@ function enfrentarMonstroDesmotivacao() {
     console.log("A criatura se dissolve em uma nuvem de poeira.")
     empatia += 1
     console.log("Sua empatia aumentou! Empatia atual: " + empatia)
-    salvarCheckpoint()
     continuarJornada()
   } else if (escolha == "3") {
     console.clear()
@@ -507,7 +488,6 @@ function querContinuar(){
 }
 
 function enfrentarMonstroVoce(){
-  console.clear()
   console.log("Sua felicidade é interrompida, o brilho do sol desaparece, dando lugar a um ambiente gélido e desolado. As sombras se movem em torno de você, e uma figura emerge da escuridão.")
   console.log("É uma cópia perfeita de Kasra, um reflexo sombrio de tudo o que ele é e representa. O clone veste o mesmo uniforme, tem as mesmas cicatrizes e até os mesmos olhos, mas há algo de profundamente perturbador em sua presença. Seus olhos são frios, como se ele nem tivesse emoções.")
 
@@ -521,7 +501,9 @@ console.log("3. Fugir")
 
 let escolha = prompt("Escolha 1, 2 ou 3:")
 if (escolha == "1"){
+  console.log("\n")
   console.log('O clone reflete cada ataque com a mesma intensidade, a força física não é a solução.')
+  console.log("\n")
   enfrentarMonstroVoce()
 }
 else if(escolha == 2){
@@ -531,9 +513,15 @@ else if(escolha == 2){
     fim()
 }
 else if(escolha == 3){
+  console.log("\n")
   console.log("Você decide fugir.")
   console.log("Apesar de sua tentativa de fuga, você percebe que está correndo em círculos. Não importa a direção que tome, você acaba de volta ao mesmo ponto, diante da sua cópia.")
+  console.log("\n")
   enfrentarMonstroVoce()
+  }
+  else{
+    console.log("Escolha inválida.")
+    enfrentarMonstroVoce()
   }
 
 }
